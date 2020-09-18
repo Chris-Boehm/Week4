@@ -1,0 +1,37 @@
+<html>
+
+	<head>
+		<title>DOM and Events</title>
+	</head>
+	<body>
+		<h1 id="Heading"></h1>
+		<p>User Text: <span id="user_text"></span></p>
+		
+		<input type="text">
+		<button>GO!</button>
+		
+		<script>
+		
+			var empty_heading = document.getElementById("Heading");
+			console.log(empty_heading);
+			console.log(empty_heading.innerText);
+			empty_heading.innerText = "Hello World!";
+			
+			var user_text = document.getElementById("user_text");
+			var answer = prompt("Give info");
+			user_text.innerText = answer;
+			
+			var text_input = document.getElementsByTagName("input")[0];
+			var button = document.getElementsByTagName("button")[0];
+			
+			var captureText = function() {
+				console.error("Button was clicked!");
+				var words = text_input.value;
+				user_text.innerText = words;
+			}
+			button.addEventListener("click", captureText); //addEventListener requires 2 tags, what is it waiting for and what it going to happen when it runs
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+	
+	<head>
+		<title>Week 4</title>
+		<script>
+			var my_age = prompt("Give me your age");
+			
+			if(my_age == 25) {
+				console.log("You're mom gaming");
+			} else if(my_age > 34) {
+				console.log("Stupid ass old people");
+			} else if(my_age < 18) {
+				console.log("You shouldn't have come here");
+			} else {
+				console.log("Poggers");
+			}
+			
+			var activity = "class";
+			var next_activity;
+			var bored = false; //boolean (true or false)
+			if(bored) {
+				next_activity = "Netflix";
+			} else {
+				next_activity = "Homework";
+			}
+			
+			console.log("Next activity is " + next_activity);
+			////////////////
+			//Boredom checker
+			///////////////
+			
+			var bored_meter = 0;
+			var me = {
+				tired_eyes: true,
+				on_phone: true,
+				mind_wandering: true,
+				heavy_head: false,
+			}
+			
+			//calculate bored_meter
+			
+			//checking only 2 of the 3 boredom symptoms
+			if(me.tired_eyes) bored_meter++;
+			if(me.on_phone) bored_meter++;
+			if(me.mind_wandering) bored_meter++;
+			
+			console.log("Your bored meter is currently at " + bored_meter);
+			
+			if(bored_meter >= 2) {
+				alert("Change activity");
+			} else {
+				alert("You are paying attention");
+				}
+			
+			//checking all 3 of the boredom symptoms
+			if(me.tired_eyes && me.on_phone && me.mind_wandering){
+				console.log("You are tired");
+			} else {
+				console.log("Keep it up");
+			}
+			
+			//using the function and giving it an argument
+			var am_i_bored = function(me_data, name) {
+				console.log("Me Data: " +name, me_data);
+				
+				if(me_data.tired_eyes && me_data.on_phone && me_data.mind_wandering){
+					console.warn("You are tired");
+				} else {
+					console.warn("Keep it up");
+				}
+			}
+			am_i_bored(me, "Chris");
+			
+			//when walking into class
+			me.tired_eyes = false;
+			me.mind_wandering = false;
+			me.on_phone = false;
+			
+			am_i_bored(me, "Chris");
+			
+		</script>
+	</head>
+	
+	<body>
+		<h1>
+			Week 4 in class
+		</h1>
+	</body>
+	
+</html>
